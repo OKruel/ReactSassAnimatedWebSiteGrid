@@ -29,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@svgr/webpack": "^4.3.3",
     "node-sass": "^4.12.0"
   }
 }
