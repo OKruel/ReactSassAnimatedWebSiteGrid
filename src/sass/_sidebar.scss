@@ -1,5 +1,62 @@
 .sidebar {
-    background-color: $color-primary;
-    grid-column: sidebar-start / sidebar-end;
-    grid-row: 1 / -1;
+  background-color: $color-primary;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+
+  display: flex;
+  justify-content: center;
+  backface-visibility: hidden;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-end; 
+    align-items: center;
+  }
+}
+
+.nav-btn {
+  position: fixed;
+  border: none;
+  border-radius: none;
+
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    background-color: #fff;
+    height: 0.25rem;
+    width: 4.5rem;
+    backface-visibility: hidden;
+  }
+
+  &::before {
+    transform: translateY(-1.3rem);
+    backface-visibility: hidden;
+  }
+  &::after {
+    transform: translateY(1.1rem);
+    backface-visibility: hidden;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    position: static;
+    margin-top: 0;
+    margin-left: -3rem;
+    margin-right: 3rem;
+
+    &::before {
+      transform: translateY(-1.2rem);
+      backface-visibility: hidden;
+    }
+    &::after {
+      transform: translateY(1rem);
+      backface-visibility: hidden;
+    }
+  }
 }
